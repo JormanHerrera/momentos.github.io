@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
     mensaje.innerHTML = `
       Helen Maury 🤍<br><br>
     Eres lo más lindo que tengo,
-    estar a tu lado me hace muy feliz y espero
-    que siga siendo asi muchiiisimos añooosss🌸  
-    !Te Quiero Muchoooo¡💕
+    estar a tu lado me hace muy feliz y, espero
+    que siga siendo asi muchiiisimos añooosss.  
+    !Te Quiero Muchoooo¡🤍
   `;
 
     for (let i = 0; i < 15; i++) {
@@ -69,3 +69,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
