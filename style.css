@@ -98,22 +98,24 @@ button:hover {
 
 /* tarjeta */
 .item {
-  background: white;
+  width: 180px;        /* tamaño del cuadro */
+  height: 180px;
   border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-  transition: transform 0.3s;
-  cursor: pointer;
+  overflow: hidden;   /* recorta lo que se salga */
+  background: transparent; /* ❌ sin fondo blanco */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
 .item:hover {
   transform: scale(1.05);
 }
 
+/* la imagen llena todo el item */
 .item img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  height: 100%;
+  object-fit: cover;  /* llena sin deformar */
+  display: block;     /* quita espacios raros */
 }
 
 /* botón volver */
@@ -266,5 +268,6 @@ footer {
   }
 
 }
+
 
 
