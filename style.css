@@ -73,33 +73,93 @@ button:hover {
 }
 
 
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  margin: 20px 0;
-}
-
-.foto {
-  width: 150px;
-  height: 150px;
-  border-radius: 15px;
-  overflow: hidden;
-  background: #ffd6e8;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-.foto img {
+.coleccion {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  min-height: 100vh;
+  background: #f89cd2;
+  padding: 30px;
+  text-align: center;
+}
+
+.coleccion h2 {
+  color: white;
+  margin-bottom: 25px;
+  font-size: 1.8em;
+}
+
+/* GRID tipo galería */
+.grid-coleccion {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 18px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* tarjeta */
+.item {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
   transition: transform 0.3s;
-}
-.foto img:hover {
-  transform: scale(1.1);
+  cursor: pointer;
 }
 
+.item:hover {
+  transform: scale(1.05);
+}
 
+.item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* botón volver */
+#btnVolver {
+  margin-top: 30px;
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: none;
+  background: white;
+  color: #f89cd2;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/* ===== VISOR ===== */
+.visor {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.visor img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 15px;
+}
+
+#cerrar {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* móvil */
+@media (max-width: 600px) {
+  .item img {
+    height: 150px;
+  }
+}
 
 .oculto {
   display: none;
@@ -206,4 +266,5 @@ footer {
   }
 
 }
+
 
