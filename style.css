@@ -158,8 +158,9 @@ button:hover {
 
 /* móvil */
 @media (max-width: 600px) {
-  .item img {
-    height: 150px;
+  .item {
+    width: 130px;
+    height: 130px;
   }
 }
 
@@ -268,6 +269,7 @@ footer {
   }
 
 }
+
 
 
 
