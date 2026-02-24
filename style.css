@@ -87,35 +87,34 @@ button:hover {
   font-size: 1.8em;
 }
 
-/* GRID tipo galería */
+/* GALERÍA NORMAL (PC) */
 .grid-coleccion {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 18px;
-  max-width: 1200px;
-  margin: auto;
+  gap: 12px;
+  padding: 15px;
 }
 
-/* tarjeta */
+/* CADA ITEM */
 .item {
-  width: 180px;       
-  height: 180px;
-  border-radius: 18px;
-  overflow: hidden;   
-  background: transparent; 
-  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* cuadrado perfecto */
+  border-radius: 15px;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 }
+
 
 .item:hover {
   transform: scale(1.05);
 }
 
-/* la imagen llena todo el item */
 .item img {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
-  display: block;    
+  object-fit: cover;
+  display: block;
 }
 
 /* botón volver */
@@ -163,6 +162,7 @@ button:hover {
     height: 130px;
   }
 }
+
 
 .oculto {
   display: none;
@@ -221,9 +221,25 @@ footer {
   padding: 15px;
   color: white;
 }
-/* 📱 RESPONSIVE PARA CELULAR */
+
 @media (max-width: 600px) {
 
+@media (max-width: 600px) {
+  .galeria {
+    height: 300px;
+  }
+
+  .grid-coleccion {
+    grid-template-columns: repeat(3, 1fr); /* 🔥 SIEMPRE 3 columnas */
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .foto {
+    width: 120px;
+    height: 120px;
+  }
+}
   header h1 {
     font-size: 1.8em;
   }
@@ -250,6 +266,10 @@ footer {
     width: 100%;
     height: 120px;
   }
+    .item {
+    border-radius: 12px;
+  }
+}
 
   button {
     width: 100%;
@@ -268,9 +288,63 @@ footer {
     right: 15px;
   }
 
+/* BOTÓN VOLVER ABAJO DERECHA */
+#btnVolver {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  background: white;
+  color: #f89cd2;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+/* VISOR TIPO GOOGLE PHOTOS */
+.visor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
 
+/* imagen grande */
+#imagenGrande {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 15px;
+}
 
+/* botón cerrar */
+#cerrar {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
 
+/* barra de desplazamiento visible */
+.galeria {
+  scrollbar-color: white transparent;
+  scrollbar-width: thin;
+}
 
+.galeria::-webkit-scrollbar {
+  height: 8px;
+}
+
+.galeria::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}
