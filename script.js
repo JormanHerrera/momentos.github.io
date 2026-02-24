@@ -70,3 +70,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+
+const items = document.querySelectorAll(".item img");
+const visor = document.getElementById("visor");
+const imgGrande = document.getElementById("imgGrande");
+const cerrar = document.getElementById("cerrar");
+
+items.forEach(img => {
+  img.addEventListener("click", () => {
+    visor.style.display = "flex";
+    imgGrande.src = img.src;
+  });
+});
+
+cerrar.addEventListener("click", () => {
+  visor.style.display = "none";
+});
